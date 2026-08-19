@@ -608,7 +608,6 @@ def login_1(uid):
         except Exception as e:
             pass
     loop += 1
-    except Exception:
         time.sleep(5)
 
 

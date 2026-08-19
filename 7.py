@@ -569,6 +569,9 @@ def old_Custom():
                 pool.submit(login_1, uid)
             else:
                 pool.submit(login_2, uid)
+             else:
+                print(f"  {rad}[!] INVALID METHOD SELECTED{RESET}")
+                break
 
 
 def login_1(uid):
@@ -598,7 +601,7 @@ def login_1(uid):
                 'advertiser_id': str(uuid.uuid4()),
                 'currently_logged_in_userid': '0',
                 'locale': 'en_US',
-                'client_country_code': 'US',
+                'client_country_code': 'PK',
                 'method': 'auth.login',
                 'fb_api_req_friendly_name': 'authenticate',
                 'fb_api_caller_class': 'com.facebook.account.login.protocol.Fb4aAuthHandler',

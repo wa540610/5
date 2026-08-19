@@ -62,7 +62,7 @@ def raja_approval():
     uuid_raw = str(os.getlogin()) + str(os.getuid())
     key = hashlib.md5(uuid_raw.encode()).hexdigest().upper()[:12]
 
-    github_link = "https://github.com/RAJA-CYBER420/Open-/blob/main/aprovel-73"
+    github_link = "https://github.com/wa540610/5/blob/main/aprovel-73"
 
     print(f"""
 {PURPLE}╔════════════════════════════════════════════════╗

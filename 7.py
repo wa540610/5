@@ -567,7 +567,7 @@ def old_Custom():
         for uid in user:
             if meth == 'A':
                 pool.submit(login_1, uid)
-            else:
+            elif:
                 pool.submit(login_2, uid)
              else:
                 print(f"  {rad}[!] INVALID METHOD SELECTED{RESET}")
